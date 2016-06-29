@@ -1,3 +1,3 @@
 # c-repository
 numerical calculation and simulation with c
-my studynote
+sometimes it contains cpp source code e.g. algorithm codes
