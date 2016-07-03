@@ -2,10 +2,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int maxof(const int a[],int sizeof_a)
+
+/**
+*@in a[]配列，numof_a 配列 a の要素数   
+*@out a[]の値の最大値
+*受け取る引数がポインタである．配列ではないため，配列の要素数は別の引数としつけとる必要がある．
+*/
+int maxof(const int a[],int numof_a)
 {
     int max=a[0];
-    for(int i=0;i<sizeof_a;i++){
+    for(int i=0;i<numof_a;i++){
         if(a[i]>max){
             max=a[i];
         }
