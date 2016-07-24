@@ -24,10 +24,9 @@ void free_dvector(double *a,int i){
 //allocate matrix memory
 double **dmatrix(int nr1,int nr2,int nl1,int nl2){
     int nrow,ncol;
-    double **a=(double**)malloc(nrow*sizeof(double*));
     nrow =nr2-nr1+1;
     ncol =nl2-nl1+1;
-
+    double **a=(double**)malloc(nrow*sizeof(double*));
     //allocate for rows
     if(a==NULL){
         printf("fail to allocate\n");
@@ -60,6 +59,7 @@ void input_matrix(double **a,char c,FILE *fin,FILE *fout){
     for(int i=1;i<=N;++i){
         for(int j=1;j<=N;j++){
             fscanf(fin,"%lf",&a[i][j]);
+            fprintf(stderr,"%5.2f\t\n",a[i][j]);
             fprintf(fout, "%5.2f\t",a[i][j]);
         }
         fprintf(fout,"\n");
@@ -82,7 +82,6 @@ int main(int argc, char const *argv[])
     double **a,*b;
     a=dmatrix(1,N,1,N);
     b=dvector(1,N);
-
     if(fin==NULL){
         fprintf(stderr, "file not found : 2-3-input.dat\n");
         exit(1);
@@ -91,7 +90,6 @@ int main(int argc, char const *argv[])
         fprintf(stderr, "fail to make file 2-3-output.dat\n");
         exit(1);
     }
-
     input_matrix(a,'A',fin,fout);
     input_vector(b,'B',fin,fout);
     fclose(fin);
