@@ -25,6 +25,7 @@ unsigned int xor96(void){
     x=y;y=z;z=t;
     return z;
 }
+
 unsigned int xor128(void){
     static unsigned int x=123456789;
     static unsigned int y=362436069;
@@ -36,6 +37,7 @@ unsigned int xor128(void){
     w=(w^(w>>19))^(t^(t>>8));
     return w;
 }
+
 int main(void){
     unsigned int count=100;
     for (unsigned int i = 0; i < count; ++i)
