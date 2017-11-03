@@ -48,11 +48,18 @@ uint32_t xor128(void)
     return w;
 }
 
+
 int main(void)
 {
-    int count = 100;
-    for (int i = 0; i < count; ++i)
+    int N=10000000;
+    int counter=0;
+    for (int i = 0; i < N; ++i)
     {
-        printf("%u\n", xor32());
+        double x=1.0*xor32()/UINT32_MAX;
+        double y=1.0*xor32()/UINT32_MAX;
+        if(x*x+y*y<1.0){
+            counter+=1;
+        }
     }
+    printf("Pi=%f\n",4.0*counter/N);
 }
