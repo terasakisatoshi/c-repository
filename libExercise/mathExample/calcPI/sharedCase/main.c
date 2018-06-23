@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include"mypi.h"
 
+double calc_pi(int N);
 int main(int argc, char const *argv[])
 {
     int N = 1000;
