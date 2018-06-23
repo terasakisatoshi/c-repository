@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include "mylib.h"
 
 int main(){
